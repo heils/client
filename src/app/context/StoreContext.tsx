@@ -26,7 +26,7 @@ export function StoreProvider({ children }: PropsWithChildren<any>) {
     if (!basket) return;
     const items = [...basket.items];
     const itemIndex = items.findIndex((i) => i.productId === productId);
-    if (itemIndex != -1) {
+    if (itemIndex !== -1) {
       items[itemIndex].quantity -= quantity;
       if (items[itemIndex].quantity === 0) items.splice(itemIndex, 1);
       setBasket((prevState) => {
