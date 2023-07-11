@@ -90,12 +90,14 @@ export const catalogSlice = createSlice({
   }),
   reducers: {
     setProductParams: (state, action) => {
+      
       state.productsLoaded = false;
       state.productParams = {
         ...state.productParams,
         ...action.payload,
         pageNumber: 1,
       };
+      console.log(state.productParams);
     },
     setPageNumber: (state, action) => {
       state.productsLoaded = false;

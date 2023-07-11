@@ -10,7 +10,7 @@ export default function CheckboxButton({ items, checked, onChange }: Props) {
   function checkedHandler(value: string) {
     const currentIndex = checkedItems.findIndex((item) => item === value);
     let newChecked: string[] = [];
-    if (currentIndex -1) newChecked = [...checkedItems, value];
+    if (currentIndex === -1) newChecked = [...checkedItems, value];
     else newChecked = checkedItems.filter((item) => item !== value);
     setCheckedItems(newChecked);
     onChange(newChecked);
