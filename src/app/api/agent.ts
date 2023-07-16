@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { router } from "../router/Routes";
 import { PaginatedResponse } from "../models/Pagination";
 import { store } from "../util/configureStore";
+import { request } from "http";
 
 const sleep = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -99,12 +100,16 @@ const Orders = {
   fetch: (id: number) => requests.get(`orders/${id}`),
   create: (values: any) => requests.post("orders", values),
 };
+const Payments ={
+  createPaymentIntent: () => requests.post('payments',{})
+}
 const agent = {
   Catalog,
   TestErrors,
   Basket,
   Account,
   Orders,
+  Payments
 };
 
 export default agent;
