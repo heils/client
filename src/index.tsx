@@ -9,6 +9,8 @@ import { StoreProvider } from "./app/context/StoreContext";
 import { Provider } from "react-redux";
 import { store } from "./app/util/configureStore";
 import { fetchProductsAsync } from "./features/catalog/catalogSlice";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
